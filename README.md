@@ -1,58 +1,84 @@
-Java Learning Repository
-This repository contains a collection of Java projects and exercises designed to help you learn and master Java programming. The projects cover various concepts, from Java basics to more advanced topics like object-oriented programming (OOP), file handling, and data structures. 
+# ATM System
 
-Table of Contents
-Project List
-Project Setup
-Java Learning Roadmap
-Contribution Guidelines
-Project List
-Java Basics
-Introduction to Java Syntax
-Learn the foundational elements of Java programming.
-Data Types, Variables, and Operators
-Explore different data types and how to manipulate them.
-Control Flow
-Understand if-else statements, switch cases, and loop constructs (for, while, do-while).
-Methods and Functions
-Create reusable code blocks for various tasks.
-Arrays and String Manipulation
-Work with arrays and manipulate strings effectively.
-ATM Machine Simulation
-Overview
-A simple console-based ATM simulation.
-Features
-Withdrawal, deposit (with a maximum limit), and balance display.
-Implementation of OOP concepts such as classes and objects.
-Object-Oriented Programming (OOP)
-Core Concepts
-Dive into classes and objects in Java.
-Key Principles
-Understand inheritance, polymorphism, abstraction, and encapsulation.
-Access Modifiers
-Learn about public, private, and protected access levels.
-Static vs Instance Methods
-Differentiate between static and instance-based methods.
-File Handling in Java
-File I/O
-Read from and write to files using FileReader, BufferedReader, FileWriter, and BufferedWriter.
-Practical Examples
-Gain hands-on experience with file input and output operations.
-Data Structures
-Basic Implementations
-Implement fundamental data structures such as LinkedList, HashMap, and ArrayList.
-Algorithms
-Learn simple algorithms for searching (e.g., binary search) and sorting (e.g., bubble sort, quicksort).
-Project Setup
-Prerequisites
-Java Development Kit (JDK)
-Ensure JDK is installed. Download here.
-Text Editor or IDE
-Use any text editor or IDE such as VS Code, IntelliJ IDEA, or Eclipse.
-To Compile and Run
-Open a terminal/command prompt.
-Navigate to the directory where the Java file is saved.
-Compile the Java files using:
-bash
-Copy code
-javac <FileName>.java
+This is a simple console-based ATM system implemented in Java. The system allows users to securely withdraw and deposit money, as well as check their account balance. Both the user's account balance and the ATM machine's balance are validated and updated accordingly.
+
+## Features
+
+- **PIN Validation**: The system validates the user’s PIN before allowing any transactions.
+- **Withdrawal**: Users can withdraw money if both their account balance and the ATM machine's balance are sufficient.
+- **Deposit**: Users can deposit money into their account with a maximum limit of ₹50,000 per transaction. The deposit will also increase the ATM machine’s balance.
+- **Balance Check**: Users can view both their account balance and the ATM machine's balance.
+- **Error Handling**: The system handles invalid inputs, insufficient funds, and deposit limits.
+
+## How to Run
+
+1. Clone or download this repository.
+2. Open the project in any Java IDE or compile and run it via the command line.
+3. The program will prompt the user for their ATM PIN. The default PIN is `1234`.
+4. After a successful login, the user can choose to:
+   - Withdraw money
+   - Deposit money
+   - Check account and ATM balances
+   - Exit the system
+
+## Code Structure
+
+- `atmSystem`: The main class containing the entire ATM functionality.
+  - **PIN Validation**: Ensures only authorized access.
+  - **Withdrawal Method**: Validates and processes the withdrawal.
+  - **Deposit Method**: Validates and processes the deposit.
+  
+## Usage
+
+Once the program starts, the user will be prompted to:
+1. **Enter ATM PIN**: If the PIN is valid, the user can proceed to the main menu.
+2. **Choose an Action**:
+   - Withdraw money
+   - Deposit money
+   - Check balance
+   - Exit
+
+### Example Output
+
+```
+Please enter your ATM PIN: 
+1234
+Welcome to ATM
+Choose an option: 
+1. Withdraw
+2. Deposit
+3. Check Balance
+4. Exit
+```
+
+### Withdrawal Example:
+```
+Please enter the amount to withdraw: 
+5000
+Amount withdrawn: 5000
+Please collect your money.
+Withdrawal successful. Remaining user balance: 5000
+Remaining ATM balance: 45000
+```
+
+### Deposit Example:
+```
+Please enter the amount to deposit (Maximum allowed is 50000): 
+20000
+Amount deposited: 20000
+Deposit successful. New user balance: 70000
+New ATM balance: 70000
+```
+
+## Constraints
+
+- The ATM machine has a starting balance of ₹50,000.
+- The user account has a starting balance of ₹10,000.
+- The maximum deposit per transaction is ₹50,000.
+- The system checks for valid input types (e.g., integers for PIN and transaction amounts).
+
+## Improvements
+
+- Add functionality for changing PINs.
+- Implement multiple user accounts.
+- Add more transaction types (e.g., transfer, mini-statement).
